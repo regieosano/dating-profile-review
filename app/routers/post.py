@@ -1,5 +1,6 @@
 from fastapi import HTTPException, Response, status, APIRouter
 from fastapi import FastAPI, File, UploadFile
+from app.services.post_service import image_post_service
 
 router = APIRouter(
     prefix="/api/posts",
@@ -10,4 +11,5 @@ router = APIRouter()
 
 @router.post("/image_file/")
 def create_upload_file(file: UploadFile):
-    return {"filename": file.filename}
+    
+    return image_post_service(file.file)
