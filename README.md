@@ -19,7 +19,7 @@ So first you have to clone this repository. Then pip install the requirements.
 -  For OpenAIs APIs Here's the link below:
    (I particularly use the Completion APIs)
 
-  https://platform.openai.com/docs/api-reference/introduction
+-  https://platform.openai.com/docs/api-reference/introduction
 
 # Execution of the program
 
