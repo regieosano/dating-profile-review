@@ -1,45 +1,50 @@
-from dotenv import load_dotenv
-import base64
 import os
+import base64
 import requests
+from dotenv import load_dotenv
+from app.services.profile_analyzer import analyzer
+from app.prompts.tasks import TEXT_PROMPT
+
 
 load_dotenv()
-# OpenAI API Key
-api_key = os.getenv('OPENAI_API_KEY')
+# OpenAI API Key and API Route
+API_KEY = os.getenv("OPENAI_API_KEY")
+API_ROUTE = os.getenv("COMPLETION_API")
 
-headers = {
-  "Content-Type": "application/json",
-  "Authorization": f"Bearer {api_key}"
-}
+tick_start = "```"
+tick_end = "```"
+
+headers = {"Content-Type": "application/json", "Authorization": f"Bearer {API_KEY}"}
 
 
 def image_post_service(uploaded_file):
-    image_as_encoded = base64.b64encode(uploaded_file.read()).decode('utf-8')
-   
+    image_as_encoded = base64.b64encode(uploaded_file.read()).decode("utf-8")
+
     payload = {
-			"model": "gpt-4-turbo",
-			"messages": [
-				{
-					"role": "user",
-					"content": [
-						{
-							"type": "text",
-							"text": "What’s in this image? Describe the appearance of the person. Analyze also if the image includes nudity or daring or provocative. Mentioned also if the image is in bad taste and not that pleasant."
-						},
-						{
-							"type": "image_url",
-							"image_url": {
-								"url": f"data:image/jpeg;base64,{image_as_encoded}"
-							}
-						}
-					]
-				}
-			],
-			"max_tokens": 300
+        "model": "gpt-4-turbo",
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": TEXT_PROMPT},
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{image_as_encoded}"
+                        },
+                    },
+                ],
+            }
+        ],
+        "max_tokens": 500,
     }
-   
-    response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
-    
+
+    response = requests.post(API_ROUTE, headers=headers, json=payload)
+
     data = response.json()
-    
-    return (data['choices'][0]['message']['content'])
+
+    profile_description = data["choices"][0]["message"]["content"]
+
+    formatted_description = tick_start + profile_description + tick_end
+
+    return analyzer(formatted_description)

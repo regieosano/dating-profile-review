@@ -13,12 +13,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/")
 def root():
     return {"message": "Welcome to Profile Checker"}
 
+
 @app.get("/favicon.ico")
 def favicon():
     return {"message": "Regie's Favicon!"}
-  
+
+
 app.include_router(post.router)
