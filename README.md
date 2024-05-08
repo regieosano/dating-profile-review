@@ -16,8 +16,8 @@ So first you have to clone this repository. Then pip install the requirements.
 
 -  Provide your own OPENAI_API_KEY in the .env file
 
--  For OpenAIs APIs Here's the link below:
-   (I particularly use the Completion APIs)
+For OpenAIs APIs Here's the link below:
+(I particularly use the Completion APIs)
 
 -  https://platform.openai.com/docs/api-reference/introduction
 
