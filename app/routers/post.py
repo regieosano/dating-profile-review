@@ -10,6 +10,5 @@ router = APIRouter(
 router = APIRouter()
 
 @router.post("/image_file/")
-def create_upload_file(file: UploadFile):
-    
-    return image_post_service(file.file)
+def create_upload_file(uploaded_file: UploadFile):
+    return image_post_service(uploaded_file.file)
