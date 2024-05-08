@@ -19,11 +19,14 @@ So first you have to clone this repository. Then pip install the requirements.
 
 Using FastAPI built-in Swagger you can try and execute the image file uploaded.
 
+![image info](./images/FastAPI-Swagger.png)
 
 
 # Algorithm of the Application
 
-As a committed advocate for LEAN MANAGEMENT and the principle of avoiding over-engineering, I also embrace established software development best practices. These include adhering to the philosophy of "Don't Reinvent the Wheel," the DRY (Don't Repeat Yourself) Principle, and the KISS (Keep It Simple, Stupid 😁) method. Here is the algorithm I propose:
+As a committed advocate for LEAN MANAGEMENT and the principle of avoiding over-engineering, I also embrace established software development best practices. These include adhering to the philosophy of "Don't Reinvent the Wheel," the DRY (Don't Repeat Yourself) Principle, and the KISS (Keep It Simple, Stupid 😁) method.
+
+Here is the algorithm I propose: (to be continued)
 
 
 
