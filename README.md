@@ -14,6 +14,7 @@ So first you have to clone this repository. Then pip install the requirements.
 
 -  pip install -r requirements.txt
 
+-  Provide your own OPENAI_API_KEY in the .env file
 
 # Execution of the program
 
