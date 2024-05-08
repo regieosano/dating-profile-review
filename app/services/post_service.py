@@ -42,4 +42,4 @@ def image_post_service(uploaded_file):
     
     data = response.json()
     
-    return (data)
+    return (data['choices'][0]['message']['content'])
