@@ -27,7 +27,10 @@ Using FastAPI built-in Swagger you can try and execute the image file uploaded.
 
 ![image info](./images/FastAPI-Swagger.png)
 
-Sample Response.
+Sample Response. It is in JSON format with three (3) attributes/fields:
+1. decision
+2. rate
+3. reason
 
 ![image info](./images/Fast-API-Swagger-Response.png)
 
