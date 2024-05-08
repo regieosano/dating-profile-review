@@ -21,6 +21,9 @@ Using FastAPI built-in Swagger you can try and execute the image file uploaded.
 
 ![image info](./images/FastAPI-Swagger.png)
 
+Sample Response.
+
+![image info](./images/Fast-API-Swagger-Response.png)
 
 # Algorithm of the Application
 
