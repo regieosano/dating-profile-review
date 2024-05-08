@@ -16,6 +16,11 @@ So first you have to clone this repository. Then pip install the requirements.
 
 -  Provide your own OPENAI_API_KEY in the .env file
 
+-  For OpenAIs APIs Here's the link below:
+   (I particularly use the Completion APIs)
+
+  https://platform.openai.com/docs/api-reference/introduction
+
 # Execution of the program
 
 Using FastAPI built-in Swagger you can try and execute the image file uploaded.
